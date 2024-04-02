@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: 'Dang',
-            role: 'Designer',
-            focus: 'UI/UX Design',
+            role: 'Developer',
+            focus: 'Fullstack Development - Tester',
             imgSrc: 'images/dang.png'
         },
         {
