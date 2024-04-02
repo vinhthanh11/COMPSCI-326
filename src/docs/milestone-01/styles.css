@@ -118,3 +118,23 @@ footer p {
         width: calc(100% - 20px);
     }
 }
+
+img{
+    border: 5px solid #b32b2b;
+}
+
+#home_wireframe {
+    height: 300px;
+}
+
+#history_wireframe {
+    height: 300px;
+}
+
+#invest_wireframe {
+    height: 300px;
+}
+
+#explore_wireframe {
+    height: 300px;
+}
