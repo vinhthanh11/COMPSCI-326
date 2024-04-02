@@ -8,7 +8,7 @@ Whenever students use their UCards to make purchases at places like Harvest Mark
 The core vision of U-invest is to provide a simple yet powerful platform that allows students to build an investment portfolio while enjoying the convenience of using their UCards for everyday expenses. By leveraging the power of micro-investments and automating the process, U-invest seeks to make investing more accessible and engaging for the UMass student community.
 
 ### Installation
-Clone the repository: git clone https://github.com/your-repo/u-invest.git
+Clone the repository: git clone https://github.com/your-repo/COMPSCI-326.git
 
 Install dependencies: npm install
 
