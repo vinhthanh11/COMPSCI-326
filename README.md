@@ -9,6 +9,7 @@ The core vision of U-invest is to provide a simple yet powerful platform that al
 
 ### Installation
 Clone the repository: git clone https://github.com/your-repo/u-invest.git
+
 Install dependencies: npm install
 
 (Your project will benefit from the installation of some base libraries that enhance your development environment. Run the command npm install -D http-server html-validate prettier in your terminal. This command installs http-server for serving your HTML files locally, html-validate for ensuring your HTML is error-free and adheres to standards, and prettier for formatting your code to maintain readability and consistency.)
