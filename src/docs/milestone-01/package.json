@@ -14,7 +14,7 @@
       "type": "git",
       "url": "https://github.com/vinhthanh11/COMPSCI-326"
     },
-    "author": "Graeme - Dang - Thanh - Baykov",
+    "author": "Graeme - Dang - Thanh - Daniel",
     "license": "ISC",
     "bugs": {
       "url": "ISSUES_URL"
@@ -35,6 +35,16 @@
         "name": "Graeme Reeves",
         "email": "greeves@umass.edu",
         "url": "https://github.com/4b41"
+      },
+      {
+        "name": "Thanh Le",
+        "email": "@umass.edu",
+        "url": "https://github.com/vinhthanh11"
+      },
+      {
+        "name": "Daniel Baykov",
+        "email": "@umass.edu",
+        "url": "https://github.com/danbayk"
       }
     ]
   }
