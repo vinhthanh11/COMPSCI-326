@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# COMPSCI-326
+# UMass Round-up Investing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+UniCash is an innovative web app designed specifically for UMass students, inspired by the popular Acorns app. The app aims to promote long-term wealth-building habits among the student body by enabling round-up investment opportunities for every item purchased.
 
-## Available Scripts
+Members:
 
-In the project directory, you can run:
+- [Thanh Le](https://github.com/weebao)
+- [Daniel Baykov](https://github.com/danbayk)
+- [Dang Nguyen](https://github.com/dangprolegend)
+- [Graeme Reeves](https://github.com/4b41)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone https://github.com/your-repo/COMPSCI-326.git
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(Your project will benefit from the installation of some base libraries that enhance your development environment. Run the command npm install -D http-server html-validate prettier in your terminal. This command installs http-server for serving your HTML files locally, html-validate for ensuring your HTML is error-free and adheres to standards, and prettier for formatting your code to maintain readability and consistency.)
 
-### `npm test`
+Start the development server: npm start
+The app should now be running on http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Contribution rules
 
-### `npm run build`
+- Every commit/feature must be associated with an issue.
+- Contributors must create a new branch using the format `<#issue>-<name>-<feature/description/etc>`.
+- Follow the code below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ```bash
+  git checkout -b "<branch-name>"
+  git add .
+  git commit -a -m "Message"
+  git push origin <branch-name>
+  ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Go to GitHub and create a pull request.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+(the instructions were taken from a very great group that I admired :D )

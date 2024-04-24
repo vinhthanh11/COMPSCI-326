@@ -1,0 +1,36 @@
+
+{
+    "name": "team-project",
+    "version": "1.0.0",
+    "description": "A web application project for COMPSCI 326.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
+      "validate-html": "html-validate src/**/*.html",
+      "prettier": "prettier src —write"
+    },
+    "repository": {
+      "type": "git",
+      "url": "GIT_REPOSITORY_URL"
+    },
+    "author": "TEAM_NAME",
+    "license": "ISC",
+    "bugs": {
+      "url": "ISSUES_URL"
+    },
+    "homepage": "HOMEPAGE_URL",
+    "devDependencies": {
+      "http-server": "^0.12.3",
+      "html-validate": "^5.1.1",
+      "prettier": "^2.0.5"
+    },
+    "collaborators": [
+      {
+        "name": "Full Name",
+        "email": "email@example.com",
+        "url": "https://github.com/username"
+      }
+    ]
+  }
+  

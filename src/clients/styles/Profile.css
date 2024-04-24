@@ -1,0 +1,79 @@
+/* Profile.css */
+.profile-container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    min-width: 250px; /* Set a minimum width */
+  }
+  
+  .profile-photo {
+    width: 120px; /* Adjust as needed */
+    height: 120px; /* Adjust as needed */
+    border: 5px solid #ccc; /* Roundish border */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  .profile-name {
+    font-size: 1.5em;
+    margin-top: 10px; /* Spacing between image and name */
+  }
+  
+
+  .info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .account-section {
+    flex: 0 0 30%; /* 30% width and not grow or shrink */
+    /* ... other styles ... */
+  }
+  
+  .news-section {
+    flex: 0 0 70%; /* 70% width and not grow or shrink */
+    /* ... other styles ... */
+  }  
+
+  .account-section, .news-section {
+    background-color: #f7f7f7;
+    border-radius: 15px; /* Rounded borders */
+    padding: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  }
+  
+
+  .account-section:last-child, .news-section:last-child {
+    margin-right: 0;
+  }
+  
+  /* ... rest of the styles remain unchanged ... */
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+    
+    .profile-container {
+      padding: 10px;
+    }
+
+    .account-section, .news-section {
+        flex: 0 0 auto; /* Reset flex-basis to auto for mobile */
+        margin-right: 0; /* No margin on the sides for mobile */
+      }    
+  
+    /* Adjustments for responsive design can be added here */
+  }
+  
