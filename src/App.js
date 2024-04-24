@@ -1,4 +1,4 @@
-import logo from './clients/components/logo/UniCash.svg';
+import logo from './clients/components/images/UniCash.svg';
 import './clients/styles/App.css';
 
 // App.js
