@@ -1,179 +1,125 @@
-:root {
-    --mainColor: whitesmoke;
-    --secondaryColor: grey;
-    --textColor: black;
-    --buttonColor: black;
-    --gradientStartColor: #0652C5;
-    --gradientEndColor: #D4418E;
-  }
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Navbar Styles */
+header {
+  background-color: #881c1c; /* UMass Maroon */
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover, nav a:focus {
+  background-color: #701f29; /* A darker shade of maroon for hover state */
+}
+
+.logo {
+  height: 2rem; /* Adjust based on your actual logo size */
+}
+
+/* Profile Icon and Dropdown Menu */
+.profile-icon-container {
+  position: relative;
   
-  header {
-      position: sticky;
-      height: fit-content;
-      top: 0;
-      overflow-y: hidden;
-      background-color: var(--mainColor);
-      color: var(--textColor);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-  }
-  
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1600px;
-    height: 64px;
-    padding: 0 64px;
-  }
-  
-  /* header h2 {
-      font-size: 24px;
-      font-weight: bold;
-      margin: auto 5%;
-  } */
-  
-  header .logo {
-    width: 160px;
-    height: auto;
-  }
-  
-  nav .nav-close-icon {
-    display: none;
-  }
-  
-  header .nav-icon {
-    display: none;
-  }
-  
-  header div,
-  nav {
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  
-  header nav .nav-link {
-    position: relative;
-    margin: 0px 12px;
-    color: var(--textColor);
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  header nav .nav-link:active {
-    transform: translateY(2px);
-  }
-  
-  /* Underline animation */
-  header nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--textColor);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  header nav .nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  
-  header nav .active.nav-link {
-    background: -webkit-linear-gradient(300deg, var(--gradientStartColor) 0%, var(--gradientEndColor) 90%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  header nav .active.nav-link::after {
-      background: -webkit-linear-gradient(0deg, var(--gradientStartColor) 0%, var(--gradientEndColor) 60%);
-  }
-  
-  header .nav-button {
-      margin-top: 4px;
-    margin-left: 12px;
-  }
-  
-  header .nav-button button {
-    background: transparent;
-    border: 1px solid;
-    /* border-radius: none; */
-    padding: 8px 16px;
-    color: var(--buttonColor);
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  header .nav-button button:hover {
-    background-color: var(--buttonColor);
-    color: white;
-  }
-  
-  header .nav-button button:active {
-    background-color: var(--buttonColor);
-    color: white;
-  }
-  
-  
-  
-  @media only screen and (max-width: 800px) {
-    /* header h2 {
-          visibility: hidden;
-      } */
-  
-    header .nav-icon {
+}
+
+.profile-icon {
+  height: 2.2rem; /* Adjust based on the actual icon size */
+  vertical-align: middle;
+  border-radius: 50px;
+}
+
+.user-settings-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 0.25rem;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow for dropdown */
+}
+
+.user-settings-dropdown a {
+  display: block;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.user-settings-dropdown a:hover, .user-settings-dropdown a:focus {
+  background-color: #eee;
+}
+
+.profile-icon-container:hover .user-settings-dropdown,
+.profile-icon-container:focus-within .user-settings-dropdown {
+  display: block;
+}
+
+/* Responsive Navbar Toggle */
+.nav-icon, .nav-close-icon {
+  display: none;
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 768px) {
+  .nav-icon {
       display: block;
-      padding: 5px;
-      cursor: pointer;
-      background: transparent;
+      background: none;
       border: none;
-      font-size: 1.8rem;
-    }
-  
-      .header-container {
-          padding: 0px 24px;
-      }
-  
-    header nav {
-      position: fixed;
-      top: -100vh;
-      left: 0;
-      height: 100%;
-      width: -webkit-fill-available;
-      display: flex;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+  }
+
+  nav.responsive_nav {
+      display: none;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      background-color: var(--mainColor);
-      transform: translateY(0);
-      transition: all 0.25s linear;
-    }
-  
-    header .responsive_nav {
-      transform: translateY(100vh);
-    }
-  
-    header .nav-button {
-      margin-left: 0px;
-    }
-  
-    nav .nav-close-icon {
+      background-color: #881c1c; /* UMass Maroon */
       position: absolute;
-      display: block;
-      top: 2rem;
-      right: 2rem;
-    }
-  
-    nav .nav-link {
-      font-size: 1.5rem;
-    }
+      width: 100%;
+      top: 100%;
+      left: 0;
   }
+
+  nav.responsive_nav a {
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem;
+      border-top: 1px solid #701f29; /* For a little separation */
+  }
+
+  .nav-close-icon {
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+  }
+
+  nav.responsive_nav.responsive_nav {
+      display: flex;
+  }
+}

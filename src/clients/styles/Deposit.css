@@ -41,11 +41,20 @@
   }
   
   .amount-display {
+    margin-bottom: 10px;
+  }
+  
+  .amount-input {
     font-size: 2em;
     text-align: center;
     color: red;
-    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
   }
+  
   
   .minimum-notice {
     text-align: center;

@@ -39,7 +39,7 @@
   }
   
   .news-section {
-    flex: 0 0 70%; /* 70% width and not grow or shrink */
+    flex: 0 10 70%; /* 70% width and not grow or shrink */
     /* ... other styles ... */
   }  
 
