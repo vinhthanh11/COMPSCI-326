@@ -1,0 +1,94 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(238, 238, 238);
+    font-family: Arial, sans-serif; /* Ensuring font consistency */
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Providing spacing around the chart */
+    box-sizing: border-box; /* Including padding and border in the width */
+}
+
+canvas {
+    width: 100%; /* Full width of the container */
+    max-width: 800px; /* Maximum width to control size on larger screens */
+    height: auto; /* To maintain the aspect ratio */
+    max-height: 400px; /* Maximum height */
+    margin: auto; /* Centering the canvas element if it's smaller than the max-width */
+    background-color: rgb(222, 222, 222);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+    border-radius: 8px; /* Rounded corners for the canvas */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        display: block; /* Stacking boxes vertically on smaller screens */
+    }
+
+    .box {
+        margin-bottom: 20px; /* Adding space between stacked boxes */
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap; /* Allowing boxes to wrap to next line if space is not enough */
+        gap: 20px; /* Space between boxes */
+    }
+
+    .box {
+        flex: 1; /* Allowing boxes to grow */
+        min-width: calc(50% - 20px); /* Minimum width for each box accounting for gap */
+    }
+}
+
+.box {
+    background-color: whitesmoke;
+    border-radius: 10px; /* Rounded corners for the boxes */
+    overflow: hidden; /* Ensuring the inner content doesn't overflow the border-radius */
+    margin: 10px 0; /* Vertical margin for boxes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow for boxes */
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9f9f9f;
+    width: 100%;
+    border-bottom: 2px solid #000000; /* Border to separate header from content */
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligning content to the top */
+    padding: 10px; /* Padding within the content area */
+    height: 100%; /* Taking full height of the parent */
+}
+
+.inner-content {
+    width: 95%; /* Full width of the parent */
+    background-color: #9f9f9f;
+    margin: 10px 0; /* Spacing between each inner content */
+    display: flex;
+    align-items: center; /* Centering items vertically */
+    justify-content: space-between; /* Spacing between title and amount */
+    padding: 10px; /* Padding within the inner content */
+    border-radius: 8px; /* Rounded corners within each inner content */
+}
+
+.title, .amount {
+    text-align: left;
+    width: 100%; /* Making sure title and amount take full width of the parent */
+}

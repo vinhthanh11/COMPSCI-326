@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/pages/investing.css">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Investing</title>
+</head>
+<body>
+    <h1>Investing</h1>
+    <h1>Total amount here</h1>
+    <div class="chart-container" id="main-chart">
+        <canvas id="myChart"></canvas>
+        <script src="../components/pages/investing.js"></script>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="header">
+                <h2>Recent Activity</h2>
+            </div>
+            <div class="content" id="dividend-content">
+                
+            </div>
+        </div>
+        <div class="box">
+            <div class="header">
+                <h2>You've invested $XX.XX in the last 30 days</h2>
+            </div>
+            <div class="content">
+                <div class="inner-content">
+                    <div class="title">
+                        Round-ups
+                    </div>
+                    <div class="amount" id="roundup-amount">
+                        <h3>$XX.XX</h3>
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <div class="title">
+                        Recurring
+                    </div>
+                    <div class="amount" id="recurring-amount">
+                        <h3>$XX.XX</h3>
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <div class="title">
+                        Dividends
+                    </div>
+                    <div class="amount" id="dividends-amount">
+                        <h3>$XX.XX</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="header">
+                <h2>Portfolio Breakdown</h2>
+            </div>
+            <div class="content">
+                <canvas id="myPieChart"></canvas>
+                <script src="../components/pages/investingpiechart.js"></script>
+            </div>
+        </div>
+        <div class="box">
+            <div class="header">
+                <h2>Individual Breakdown</h2>
+            </div>
+            <div class="content">
+                <div class="inner-content">
+                    <div class="title">
+                        Round-ups
+                    </div>
+                    <div class="amount" id="individual-roundups">
+
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <div class="title">
+                        Recurring
+                    </div>
+                    <div class="amount" id="individual-recurring">
+
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <div class="title">
+                        Dividends
+                    </div>
+                    <div class="amount" id="individual-dividends">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
