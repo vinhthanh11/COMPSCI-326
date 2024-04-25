@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+  /* Color scheme */
+  --primary-color: #880000; /* Primary color for your brand */
+  --text-color: #333; /* Primary text color */
+  --bg-color: #fff; /* Background color */
+
+  /* Typography */
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-monospace: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+  /* Spacing */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+
+  /* Borders */
+  --border-radius: 4px;
+}
+
+/* Body styling */
+body {
+  margin: 0;
+  padding: var(--spacing-medium);
+  font-family: var(--font-family-sans-serif);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.2s; /* Smooth color transition for hover state */
+}
+
+a:hover,
+a:focus {
+  color: darken(var(--primary-color), 10%); /* Slightly darker on hover/focus */
+}
+
+/* Buttons */
+button,
+.input[type="submit"],
+.input[type="button"] {
+  font-family: var(--font-family-sans-serif);
+  padding: var(--spacing-small) var(--spacing-medium);
+  margin: var(--spacing-small) 0;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: background-color 0.2s; /* Smooth background transition for hover state */
+}
+
+
+/* Forms */
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+}
+
+/* Code */
+code {
+  font-family: var(--font-family-monospace);
+  background-color: #f5f5f5; /* Light grey background */
+  padding: var(--spacing-small);
+  border-radius: var(--border-radius);
+}

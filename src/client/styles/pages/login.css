@@ -1,3 +1,4 @@
+
 html, body{
     height: 100%;
     margin: 0;
@@ -15,7 +16,7 @@ html, body{
 }
 
 .left-box{
-    background-color: rgb(172, 172, 172);
+    background-color: #880000;
 }
 
 .right-box{
@@ -28,6 +29,8 @@ html, body{
 
 input[type="text"], input[type="password"]{
     width: 60%;
+    min-height: 30px;
+    margin: 0 0 10px 0;
 }
 
 button {

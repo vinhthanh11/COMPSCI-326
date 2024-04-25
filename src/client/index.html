@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UniCash</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/navigo@8.11.1/lib/navigo.min.js"></script>
+    <script>
+      const router = new Navigo('/');
+
+      router
+        .on('/', () => loadPage('home.html'))
+        .on('/history', () => loadPage('history.html'))
+        .on('/investing', () => loadPage('investing.html'))
+        .resolve();
+
+        function loadPage(path) {
+          const appContainer = document.getElementById('app');
+          // Correct the path to reflect the structure
+          fetch(`./pages/${path}`)
+            .then(response => {
+              // It's good practice to check if the response was successful
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.text();
+            })
+            .then(html => {
+              appContainer.innerHTML = html;
+            })
+            .catch(error => {
+              console.error('Error loading the page:', error);
+            });
+        }
+            </script>
+  </body>
+</html>

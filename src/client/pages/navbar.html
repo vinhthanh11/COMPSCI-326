@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <link rel="stylesheet" href="../styles/pages/navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar.html -->
+  <div class="navbar">
+    <a href="/">
+      <img src="../components/images/UniCash.svg" alt="UniCash" class="logo" />
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/investing">Investing</a>
+      <a href="/history">History</a>
+      <a href="/explore">Explore</a>
+      <div class="profile-icon-container">
+        <img src="../components/images/sample_profile.png" alt="Profile" class="profile-icon" />
+        <div class="user-settings-dropdown" style="display: none;">
+          <a href="/profile">Profile</a>
+          <a href="/settings">Settings</a>
+        </div>
+      </div>
+      <button class="nav-icon nav-close-icon" aria-label="Close navigation menu">
+        <i class="fa fa-times"></i>
+      </button>
+    </nav>
+    <button class="nav-icon" aria-label="Open navigation menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+
+  <script src="../components/navbar.js"></script>
+</body>
+</html>

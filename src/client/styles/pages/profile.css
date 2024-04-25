@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f7f7f7;
+  }
+  
+  .profile-container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #eeeeee;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #cccccc;
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .account-section, .news-section {
+    padding: 20px;
+  }
+  
+  .account-section h2, .news-section h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eeeeee;
+  }
+  
+  .account-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .account-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .deposit-btn {
+    background: #4CAF50;
+  }
+  
+  .withdraw-btn {
+    background: #f44336;
+  }
+  
