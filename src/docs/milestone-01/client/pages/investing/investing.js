@@ -14,7 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
     renderChart();
 
     addChartValue({date: '2024-07-01', amount: 11.43});
-    addRecentActivityDividend(2.43);
+    loadDividends();
+    addDividend(2.43);
+
+    addRoundup(4.32);
+    addRecurringAmount(2.95);
+    addDividends(6.23);
+
+    addIndividualRoundups(4.83);
+    addIndividualRecurring(7.31);
+    addIndividualDividends(9.61);
 });
 
 function renderChart(){
@@ -61,10 +70,47 @@ function loadDividends(){
         title.className = "title";
         const description = document.createElement('div');
         description.className = "amount";
-        title.innerHTML = `<h4>${headline.title}</h4>`;
-        description.innerHTML = headline.description;
+        title.innerHTML = `<h4>Dividend</h4>`;
+        description.innerHTML = `<h4>$${dividend}</h4>`;
         innerContent.appendChild(title);
         innerContent.appendChild(description);
-        newsContainer.appendChild(innerContent);
+        dividendContent.appendChild(innerContent);
     }
+}
+
+function addDividend(dividend){
+    recentDividends.push(dividend);
+    const divContent = document.getElementById('dividend-content');
+    divContent.innerHTML = "";
+    loadDividends();
+}
+
+function addRoundup(amount){
+    const field = document.getElementById('roundup-amount');
+    field.innerHTML = `<h3>$${amount}</h3>`;
+}
+
+function addRecurringAmount(amount){
+    const field = document.getElementById('recurring-amount');
+    field.innerHTML = `<h3>$${amount}</h3>`;
+}
+
+function addDividends(amount){
+    const field = document.getElementById('dividends-amount');
+    field.innerHTML = `<h3>$${amount}</h3>`;
+}
+
+function addIndividualRoundups(amount){
+    const field = document.getElementById('individual-roundups');
+    field.innerHTML = `<h3>$${amount}</h3>`;
+}
+
+function addIndividualRecurring(amount){
+    const field = document.getElementById('individual-recurring');
+    field.innerHTML = `<h3>$${amount}</h3>`;
+}
+
+function addIndividualDividends(amount){
+    const field = document.getElementById('individual-dividends');
+    field.innerHTML = `<h3>$${amount}</h3>`;
 }
