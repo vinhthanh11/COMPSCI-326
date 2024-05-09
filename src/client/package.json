@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "html-validate": "^8.18.1",
+    "http-server": "^14.1.1",
+    "prettier": "^3.2.5"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "validate": "html-validate"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
