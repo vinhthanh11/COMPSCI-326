@@ -9,6 +9,7 @@
     "validate": "html-validate"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pouchdb": "^8.0.1"
   }
 }
