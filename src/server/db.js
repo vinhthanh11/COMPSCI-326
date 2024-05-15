@@ -47,6 +47,22 @@ function register() {
 
     // Generate a unique ID for the user
     const userId = `user:${spireId}`;
+
+    // const asset = {
+    //     pair: null,
+    //     quantity: null
+    // }
+
+    const test = {
+        pair: "BTCUSD",
+        quantity: 1
+    }
+
+    const portfolio = {
+        positions: [test] // array of assets
+    };
+
+
     const user = {
         _id: userId,
         spireId,
@@ -57,7 +73,8 @@ function register() {
             diningDollars: 0,
             investing: 0,
             unlimitedDC: 0
-        }
+        },
+        portfolio: portfolio
     };
 
     db.put(user)

@@ -1,13 +1,54 @@
 let pieChart;
 
-const breakdown = 
-[{pair: "BTCUSD", amount: 300},
-{pair: "ETHUSD", amount: 200},
-{pair: "DOGEUSD", amount: 350}];
+const db = new PouchDB('login-db');
+
+async function fetchUserData(spireId) {
+    try {
+        const user = await db.get(`user:${spireId}`);
+        return user.portfolio.positions;
+    } catch (err) {
+
+        console.error('Error fetching user data:', err);
+        return null;
+    }
+}
+
+let breakdown = [];
+
+async function displayPortfolio() {
+    const spireId = sessionStorage.getItem('spireId');
+
+    if (spireId) {
+        const pf = await fetchUserData(spireId);
+        if (pf.length > 0){
+            breakdown = pf;
+            console.log(breakdown);
+        } else {
+            // filler if no positions held
+            breakdown = 
+            [{pair: "BTCUSD", quantity: 300},
+            {pair: "ETHUSD", quantity: 200},
+            {pair: "DOGEUSD", quantity: 350}];
+        }
+    } else {
+        console.error('SPIRE ID not found in session storage');
+        window.location.href = '/';
+    }
+}
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
-    renderPieChart();
-    addToBreakdown({pair: "KASUSDT", amount: 400});
+    displayPortfolio().then(() => {
+        console.log(breakdown, 1);
+        renderPieChart();
+    })
+    .catch(error => {
+        console.error('Error during displayPortfolio:', error);
+    });
+
 });
 
 function renderPieChart(){
@@ -34,7 +75,7 @@ function renderPieChart(){
 
     for(const item of breakdown){
         pieChart.data.labels.push(item.pair);
-        pieChart.data.datasets[0].data.push(item.amount);
+        pieChart.data.datasets[0].data.push(item.quantity);
     }
     pieChart.update()
 }
@@ -42,7 +83,7 @@ function renderPieChart(){
 function addToBreakdown(value){
     let index = breakdown.findIndex(element => element.pair === value.pair);
     if(index !== -1){
-        breakdown[index].amount += value.amount;
+        breakdown[index].quantity += value.quantity;
     } else{
         breakdown.push(value);
     }
