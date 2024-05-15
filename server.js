@@ -17,7 +17,7 @@ const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname, 'src')));
 
 // Fallback to 'index.html' for any other request
-async function addDocument(doc) {
+async function addDocumentfix(doc) {
   try {
     const response = await db.put(doc);
     console.log("Document created successfully", response);
