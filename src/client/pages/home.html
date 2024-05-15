@@ -5,27 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/index.css">
     <link rel="stylesheet" href="../../styles/home.css">
+    <link rel="stylesheet" href="../../styles/navbar.css">
+
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="../components/pages/home.js"></script>
     <title>Home</title>
 </head>
 <body>
-    <div class="navbar"></div>
+    <!-- NAVBAR HERE  -->
+    <div class="navbar">
+        <a class="first" href="/">U-Invest</a>
+        <nav>
+          <a  href="/">Home</a>
+          <a href="./investing">Investing</a>
+          <a href="./history">History</a>
+          <a href="./profile">Explore</a>
+    
+          <button class="nav-icon nav-close-icon" aria-label="Close navigation menu">
+            <i class="fa fa-times"></i>
+          </button>
+        </nav>
+        <button class="nav-icon" aria-label="Open navigation menu">
+          <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    <!-- END NAVBAR -->
+
+
     <h1>Investing Summary</h1>
     <div id="total-amount-invested">
         <h1>Total amount here</h1>
     </div>
     <div class="chart-container">
         <canvas id="myChart"></canvas>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <script src="home.js"></script>
-=======
->>>>>>> 909dd2238e6ae737aa97ce3ef4a1ee24b07036e4
-=======
         <script src="../../styles/home.js"></script>
->>>>>>> 4b2c6ceff4e9bea016706afa63b248f6cfb0d38f
     </div>
     <div class="container">
         <div class="box">

@@ -6,62 +6,85 @@
 <title>Profile Page</title>
 <link rel="stylesheet" href="../../styles/index.css">
 <link rel="stylesheet" href="../../styles/profile.css">
+<link rel="stylesheet" href="../../styles/navbar.css">
+
 </head>
 <body>
-  <div class="profile-container">
-    <div class="user-info">
-      <div class="avatar"></div>
-      <h1 class="name">John Doe</h1>
-    </div>
-    
-    <div class="account-section">
-      <h2>Accounts</h2>
-      <div class="account-item">
-        <span>Student Debt Plan</span>
-        <span>$100.68</span>
-      </div>
-      <div class="account-item">
-        <span>Dining Dollars</span>
-        <span>$125.33</span>
-      </div>
-      <div class="account-item">
-        <span>Investing</span>
-        <span>$12.10</span>
-      </div>
-      <div class="account-item">
-        <span>M UNLIMITED DC</span>
-        <span>463 Meals</span>
-      </div>
-      <div class="account-actions">
-        <button class="btn deposit-btn">Deposit</button>
-        <button class="btn withdraw-btn">Withdraw</button>
-      </div>
-          </div>
-  </div>
+  <!-- NAVBAR HERE  -->
+  <div class="navbar">
+    <a class="first" href="/">U-Invest</a>
+    <nav>
+      <a  href="/">Home</a>
+      <a href="./investing">Investing</a>
+      <a href="./history">History</a>
+      <a href="./profile">Explore</a>
 
-<!-- Modal HTML -->
-<div id="deposit-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="payment-method">Payment Method</label>
-          <select id="payment-method" class="modal-select">
-            <option value="">Please Choose</option>
-            <!-- Options will be populated by JS -->
-          </select>
+      <button class="nav-icon nav-close-icon" aria-label="Close navigation menu">
+        <i class="fa fa-times"></i>
+      </button>
+    </nav>
+    <button class="nav-icon" aria-label="Open navigation menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <!-- END NAVBAR -->
+
+  <div>
+    <div class="profile-container">
+      <div class="user-info">
+        <div class="avatar"></div>
+        <h1 class="name">John Doe</h1>
+      </div>
+      
+      <div class="account-section">
+        <h2>Accounts</h2>
+        <div class="account-item">
+          <span>Student Debt Plan</span>
+          <span>$100.68</span>
         </div>
-        
-        <div class="form-group">
-          <label for="to-account">To Account</label>
-          <select id="to-account" class="modal-select">
-            <option value="">Please Choose</option>
-            <!-- Options will be populated by JS -->
-          </select>
+        <div class="account-item">
+          <span>Dining Dollars</span>
+          <span>$125.33</span>
         </div>
-        
-        <div class="amount-display">$0.00</div>
-        <small>$5 minimum</small>
+        <div class="account-item">
+          <span>Investing</span>
+          <span>$12.10</span>
+        </div>
+        <div class="account-item">
+          <span>M UNLIMITED DC</span>
+          <span>463 Meals</span>
+        </div>
+        <div class="account-actions">
+          <button class="btn deposit-btn">Deposit</button>
+          <button class="btn withdraw-btn">Withdraw</button>
+        </div>
+            </div>
+    </div>
+
+  <!-- Modal HTML -->
+  <div id="deposit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="payment-method">Payment Method</label>
+            <select id="payment-method" class="modal-select">
+              <option value="">Please Choose</option>
+              <!-- Options will be populated by JS -->
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="to-account">To Account</label>
+            <select id="to-account" class="modal-select">
+              <option value="">Please Choose</option>
+              <!-- Options will be populated by JS -->
+            </select>
+          </div>
+          
+          <div class="amount-display">$0.00</div>
+          <small>$5 minimum</small>
+        </div>
       </div>
     </div>
   </div>

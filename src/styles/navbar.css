@@ -1,13 +1,20 @@
 /* General styling for the navbar */
 .navbar {
-    background-color: #333; /* Dark background for the navbar */
+    background-color: rgb(128, 0, 0);
+    /* background-color: #333; Dark background for the navbar */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
-
+.first{
+    color: white; 
+    font-size: 20px; 
+}
+.first:hover{
+    color: black;
+}
 /* Logo styling */
 .navbar .logo {
     height: 50px;
@@ -20,6 +27,7 @@ nav {
 }
 
 nav a {
+    font-size: 20px;
     color: white;
     text-decoration: none;
     margin: 0 10px;
@@ -28,7 +36,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #555; /* Lighten background on hover */
+    color: black;
+    /* background-color: #555; Lighten background on hover */
 }
 
 /* Profile and settings interaction area */

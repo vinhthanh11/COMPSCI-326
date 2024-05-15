@@ -10,9 +10,11 @@ const chartValues = [
 {date: '2024-06-01', amount: 9.04}];
 
 const news = [
-{title: "sample news title 1", description: "samples news description 1"},
-{title: "sample news title 2", description: "samples news description 2"},
-{title: "sample news title 3", description: "samples news description 3"}];
+{title: "An exploration of UMass’ kosher dining options", url:"https://dailycollegian.com/2024/04/an-exploration-of-umass-kosher-dining-options/"},
+{title: "Baseball Notebook: UMass suffers sweep at the hands of George Washington", url:"https://dailycollegian.com/2024/05/baseball-notebook-umass-suffers-sweep-at-the-hands-of-george-washington/"},
+{title: "Amherst Burgers bucking the odds", url:"https://dailycollegian.com/2023/10/amherst-burgers-bucking-the-odds/"},
+{title: "SGA discusses options for reform of the Student Activities Fee increase", url:"https://dailycollegian.com/2024/03/sga-discusses-options-for-reform-of-the-student-activities-fee-increase/"},
+];
 
 document.addEventListener('DOMContentLoaded', function () {
     renderChart();
@@ -97,12 +99,12 @@ function loadNewsHeadlines(){
         innerContent.className = "inner-content"
         const title = document.createElement('div');
         title.className = "title";
-        const description = document.createElement('div');
-        description.className = "amount";
-        title.innerHTML = `<h4>${headline.title}</h4>`;
-        description.innerHTML = headline.description;
+        // const description = document.createElement('div');
+        // description.className = "amount";
+        title.innerHTML = `<h4><a target="_blank" href=${headline.url}>${headline.title} </a></h4>`;
+        // description.innerHTML = headline.description;
         innerContent.appendChild(title);
-        innerContent.appendChild(description);
+        // innerContent.appendChild(description);
         newsContainer.appendChild(innerContent);
     }
 }
