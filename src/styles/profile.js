@@ -161,13 +161,61 @@ window.onload = displayUserData;
 
 
 // Function to handle logout
+// Function to handle logout
 function logout() {
-  // Clear session storage
-  sessionStorage.removeItem('spireId');
-  sessionStorage.removeItem('userName');
-  // Redirect to the login page
-  window.location.href = '/';
+  console.log('Logout button clicked'); // Debug log
+  const spireId = sessionStorage.getItem('spireId');
+
+  if (spireId) {
+      // Initialize balances object
+      const balances = {};
+
+      // Get elements and update balances
+      const studentDebtElem = document.getElementById('student-debt');
+      const diningDollarsElem = document.getElementById('dining-dollars');
+      const investingElem = document.getElementById('investing');
+      const unlimitedDCElem = document.getElementById('unlimited-dc');
+
+      if (studentDebtElem) {
+          balances.studentDebt = parseFloat(studentDebtElem.textContent) || 0;
+      } else {
+          console.error('Element with ID "student-debt" not found');
+      }
+
+      if (diningDollarsElem) {
+          balances.diningDollars = parseFloat(diningDollarsElem.textContent) || 0;
+      } else {
+          console.error('Element with ID "dining-dollars" not found');
+      }
+
+      if (investingElem) {
+          balances.investing = parseFloat(investingElem.textContent) || 0;
+      } else {
+          console.error('Element with ID "investing" not found');
+      }
+
+      if (unlimitedDCElem) {
+          balances.unlimitedDC = parseFloat(unlimitedDCElem.textContent) || 0;
+      } else {
+          console.error('Element with ID "unlimited-dc" not found');
+      }
+
+      // Save the balances before logging out
+      updateUserBalances(spireId, balances);
+
+      // Clear session storage
+      sessionStorage.removeItem('spireId');
+      sessionStorage.removeItem('userName');
+      // Redirect to the login page
+      window.location.href = '/';
+  } else {
+      console.error('User information not found in session storage');
+  }
 }
+
+// Attach the event listener to the logout button
+document.querySelector('.logout-btn').addEventListener('click', logout);
+
 
 function deleteProfile() {
   // Retrieve the user's spireID from session storage

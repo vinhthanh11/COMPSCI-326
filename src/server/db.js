@@ -68,7 +68,25 @@ function register() {
         .catch(err => {
             alert(`Error registering user: ${err}`);
         });
-}  
+}
+
+
+// Function to update user balances in the database
+function updateUserBalances(spireId, balances) {
+    db.get(`user:${spireId}`)
+        .then(user => {
+            user.balances = balances;
+            return db.put(user);
+        })
+        .then(() => {
+            console.log('User balances updated successfully');
+        })
+        .catch(err => {
+            console.error('Error updating user balances:', err);
+        });
+}
+
+
 // Function to login
 function login() {
     const spireId = document.getElementById('spireId').value;

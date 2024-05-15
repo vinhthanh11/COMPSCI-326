@@ -1,125 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profile Page</title>
-<link rel="stylesheet" href="../../styles/index.css">
-<link rel="stylesheet" href="../../styles/profile.css">
-<link rel="stylesheet" href="../../styles/navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/profile.css">
+    <link rel="stylesheet" href="../../styles/navbar.css">
 </head>
 <body>
-  <!-- NAVBAR HERE -->
-  <div class="navbar">
-    <a class="first" href="/home">UniCash</a>
-    <nav>
-      <a href="/home">Home</a>
-      <a href="./investing">Investing</a>
-      <a href="./history">History</a>
-      <a href="./profile">Explore</a>
-      <button class="nav-icon nav-close-icon" aria-label="Close navigation menu">
-        <i class="fa fa-times"></i>
-      </button>
-    </nav>
-    <button class="nav-icon" aria-label="Open navigation menu">
-      <i class="fa fa-bars"></i>
-    </button>
-  </div>
-  <!-- END NAVBAR -->
-
-  <div class='main'>
-    <div class="profile-container">
-      <div class="user-info">
-        <div class="avatar">
-          <img src="../../client/components/images/sample_profile.png" alt="avatar">
-        </div>
-        <h3 id="userInfo"></h3> <!-- Single element to display the user's name and SPIRE ID -->
-      </div>
-      <div class="account-section">
-        <h2>Accounts</h2>
-        <div class="account-item">
-          <span>Student Debt Plan</span>
-          <span>$ <span id="student-debt">0</span> </span>
-        </div>
-        <div class="account-item">
-          <span>Dining Dollars</span>
-          <span>$ <span id="dining-dollars">0</span> </span>
-        </div>
-        <div class="account-item">
-          <span>Investing</span>
-          <span>$ <span id="investing">0</span> </span>
-        </div>
-        <div class="account-item">
-          <span>M UNLIMITED DC</span>
-          <span> <span id="student-debt">0</span> Meals</span>
-        </div>
-        <div class="account-actions">
-          <button class="btn deposit-btn">Deposit</button>
-          <button class="btn withdraw-btn">Withdraw</button>
-          <button class="btn delete-btn" onclick="deleteProfile()">Delete Profile</button>
-          <button class="btn logout-btn" onclick="logout()">Logout</button> <!-- Logout button -->
-        </div>
-      </div>
+    <!-- NAVBAR HERE -->
+    <div class="navbar">
+        <a class="first" href="/home">UniCash</a>
+        <nav>
+            <a href="/home">Home</a>
+            <a href="./investing">Investing</a>
+            <a href="./history">History</a>
+            <a href="./profile">Explore</a>
+            <button class="nav-icon nav-close-icon" aria-label="Close navigation menu">
+                <i class="fa fa-times"></i>
+            </button>
+        </nav>
+        <button class="nav-icon" aria-label="Open navigation menu">
+            <i class="fa fa-bars"></i>
+        </button>
     </div>
-  </div>
+    <!-- END NAVBAR -->
 
-  <!-- Modal HTML -->
-  <div id="deposit-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="payment-method">Payment Method</label>
-          <select id="payment-method" class="modal-select">
-            <option value="">Please Choose</option>
-            <!-- Options will be populated by JS -->
-          </select>
+    <div class='main'>
+        <div class="profile-container">
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="../../client/components/images/sample_profile.png" alt="avatar">
+                </div>
+                <h3 id="userInfo"></h3> <!-- Single element to display the user's name and SPIRE ID -->
+            </div>
+            <div class="account-section">
+                <h2>Accounts</h2>
+                <div class="account-item">
+                  <span>Student Debt Plan</span>
+                  <span>$ <span id="student-debt">0</span> </span>
+              </div>
+              <div class="account-item">
+                  <span>Dining Dollars</span>
+                  <span>$ <span id="dining-dollars">0</span> </span>
+              </div>
+              <div class="account-item">
+                  <span>Investing</span>
+                  <span>$ <span id="investing">0</span> </span>
+              </div>
+              <div class="account-item">
+                  <span>M UNLIMITED DC</span>
+                  <span> <span id="unlimited-dc">0</span> Meals</span>
+              </div>
+                <div class="account-actions">
+                    <button class="btn deposit-btn">Deposit</button>
+                    <button class="btn withdraw-btn">Withdraw</button>
+                    <button class="btn delete-btn" onclick="deleteProfile()">Delete Profile</button>
+                    <button class="btn logout-btn" onclick="logout()">Logout</button> <!-- Logout button -->
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="to-account">To Account</label>
-          <select id="to-account" class="modal-select">
-            <option value="">Please Choose</option>
-            <!-- Options will be populated by JS -->
-          </select>
-        </div>
-        <!-- Input field to receive deposit money -->
-        <div class="form-group">
-          <label for="deposit-amount">Deposit Amount</label>
-          <input type="number" id="deposit-amount" class="modal-input" min="5" placeholder="Enter amount">
-          <small>$5 minimum</small>
-        </div>
-        <!-- Deposit button -->
-        <button id="deposit-button" class="modal-button">Deposit</button>
-      </div>
     </div>
-  </div>
 
-  <!-- Modal for Withdrawal -->
-  <div id="withdraw-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="from-account">From Account</label>
-          <select id="from-account" class="modal-select">
-            <option value="">Please Choose</option>
-            <!-- Options will be populated by JS -->
-          </select>
+    <!-- Modal HTML -->
+    <div id="deposit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" class="modal-select">
+                        <option value="">Please Choose</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="to-account">To Account</label>
+                    <select id="to-account" class="modal-select">
+                        <option value="">Please Choose</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <!-- Input field to receive deposit money -->
+                <div class="form-group">
+                    <label for="deposit-amount">Deposit Amount</label>
+                    <input type="number" id="deposit-amount" class="modal-input" min="5" placeholder="Enter amount">
+                    <small>$5 minimum</small>
+                </div>
+                <!-- Deposit button -->
+                <button id="deposit-button" class="modal-button">Deposit</button>
+            </div>
         </div>
-        <!-- Input field to receive withdrawal amount -->
-        <div class="form-group">
-          <label for="withdraw-amount">Withdrawal Amount</label>
-          <input type="number" id="withdraw-amount" class="modal-input" min="5" placeholder="Enter amount">
-          <small>$5 minimum</small>
-        </div>
-        <!-- Withdraw button -->
-        <button id="withdraw-button" class="modal-button">Withdraw</button>
-      </div>
     </div>
-  </div>
 
+    <!-- Modal for Withdrawal -->
+    <div id="withdraw-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="from-account">From Account</label>
+                    <select id="from-account" class="modal-select">
+                        <option value="">Please Choose</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <!-- Input field to receive withdrawal amount -->
+                <div class="form-group">
+                    <label for="withdraw-amount">Withdrawal Amount</label>
+                    <input type="number" id="withdraw-amount" class="modal-input" min="5" placeholder="Enter amount">
+                    <small>$5 minimum</small>
+                </div>
+                <!-- Withdraw button -->
+                <button id="withdraw-button" class="modal-button">Withdraw</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
+    <script src="../../server/db.js"></script>
+    <script src="../../styles/profile.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
-<script src="../../server/db.js"></script>
-<script src="../../styles/profile.js"></script>
 </html>
