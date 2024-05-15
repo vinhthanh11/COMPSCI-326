@@ -26,13 +26,23 @@ html, body {
   }
   
   .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #cccccc;
-    margin-right: 10px;
+    width: 100px; /* Fixed width for the avatar container */
+    height: 100px; /* Fixed height for the avatar container */
+    border-radius: 50%; /* Make the container round */
+    overflow: hidden; /* Hide any overflow */
+    display: flex; /* Center the image */
+    align-items: left;
+    justify-content: left; 
+    margin: 0 auto 10px; /* Center the avatar container and add margin below */
   }
-  
+
+  /* Style for the avatar image */
+  .avatar img {
+      width: 100%; /* Make the image take the full width of the container */
+      height: auto; /* Maintain the aspect ratio */
+      object-fit: cover; /* Cover the container */
+  }
+    
   .name {
     font-size: 1.5rem;
     color: #333;
@@ -135,6 +145,11 @@ html, body {
     text-align: center;
     margin-top: 0.5rem;
   }
-  
-  /* Style the select element with your own preferences */
-  
+
+  /* Ensure the avatar is responsive on smaller screens */
+@media (max-width: 600px) {
+  .avatar {
+      width: 100px; /* Adjust width for smaller screens */
+      height: 100px; /* Adjust height for smaller screens */
+  }
+}

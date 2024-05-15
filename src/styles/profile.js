@@ -31,10 +31,10 @@ function openDepositModal() {
   // Event listener for the close button (if you have one in your modal)
   document.querySelector('.close-modal').addEventListener('click', closeDepositModal);
 
-var depositButton = document.getElementById('deposit-button');
+  var depositButton = document.getElementById('deposit-button');
 
-// Add click event listener to the deposit button
-depositButton.addEventListener('click', function() {
+  // Add click event listener to the deposit button
+  depositButton.addEventListener('click', function() {
     // Get the value from the deposit amount input field
     var depositAmount = parseFloat(document.getElementById('deposit-amount').value);
     
@@ -127,9 +127,78 @@ function updateBalance(accountId, depositAmount) {
     var newBalance = currentBalance + depositAmount;
     accountElement.innerHTML = newBalance.toFixed(2);
 }
-
 // Function to close the modal
 function closeModal() {
-    var modal = document.getElementById('deposit-modal');
+    var modal = document.getElementById('deposit-modal'); 
     modal.style.display = 'none';
 }
+
+
+// Function to retrieve and display the user data
+async function displayUserData() {
+  const spireId = sessionStorage.getItem('spireId');
+  const userName = sessionStorage.getItem('userName');
+
+  if (spireId && userName) {
+      try {
+          const user = await db.get(`user:${spireId}`);
+          const userInfo = `Fullname: ${userName}, SPIRE ID: ${spireId}`;
+          document.getElementById('userInfo').textContent = userInfo;
+          document.getElementById('student-debt').textContent = user.balances.studentDebt.toFixed(2);
+          document.getElementById('dining-dollars').textContent = user.balances.diningDollars.toFixed(2);
+          document.getElementById('investing').textContent = user.balances.investing.toFixed(2);
+          document.getElementById('unlimited-dc').textContent = user.balances.unlimitedDC.toFixed(2);
+      } catch (err) {
+        
+      }
+  } else {
+      window.location.href = '/';
+  }
+}
+
+// Call the displayUserData function when the page loads
+window.onload = displayUserData;
+
+
+// Function to handle logout
+function logout() {
+  // Clear session storage
+  sessionStorage.removeItem('spireId');
+  sessionStorage.removeItem('userName');
+  // Redirect to the login page
+  window.location.href = '/';
+}
+
+function deleteProfile() {
+  // Retrieve the user's spireID from session storage
+  const spireId = sessionStorage.getItem('spireId');
+
+  if (spireId) {
+      // Confirm the action with the user
+      const confirmDelete = confirm("Are you sure you want to delete your profile? This action cannot be undone.");
+
+      if (confirmDelete) {
+          // Delete the user document from PouchDB
+          db.get(`user:${spireId}`)
+              .then(user => db.remove(user))
+              .then(() => {
+                  alert('Profile deleted successfully');
+                  // Clear session storage
+                  sessionStorage.removeItem('spireId');
+                  sessionStorage.removeItem('userName');
+                  // Redirect to the login page
+                  window.location.href = '/';
+              })
+              .catch(err => {
+                  console.error('Error deleting profile:', err);
+                  alert('Error deleting profile. Please try again.');
+              });
+      }
+  } else {
+      console.error('User information not found in session storage');
+      alert('Error deleting profile. Please log in again.');
+      // Redirect to the login page
+      window.location.href = '/';
+  }
+}
+

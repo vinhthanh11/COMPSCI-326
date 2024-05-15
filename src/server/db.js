@@ -26,6 +26,19 @@ function register() {
     const spireId = document.getElementById('newSpireId').value;
     const password = document.getElementById('newPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
+    const name = document.getElementById('newName').value;
+
+    // Validate that the name is not a number
+    if (!isNaN(name)) {
+        alert('Name cannot be a number');
+        return;
+    }
+
+    // Validate that the SPIRE ID is a number
+    if (isNaN(spireId)) {
+        alert('SPIRE ID must be a number');
+        return;
+    }
 
     if (password !== confirmPassword) {
         alert('Passwords do not match');
@@ -34,11 +47,17 @@ function register() {
 
     // Generate a unique ID for the user
     const userId = `user:${spireId}`;
-
     const user = {
         _id: userId,
         spireId,
         password,
+        name,
+        balances: {
+            studentDebt: 0,
+            diningDollars: 0,
+            investing: 0,
+            unlimitedDC: 0
+        }
     };
 
     db.put(user)
@@ -46,11 +65,10 @@ function register() {
             alert('Registration successful');
             hideRegisterForm();
         })
-        .catch((err) => {
+        .catch(err => {
             alert(`Error registering user: ${err}`);
         });
-}
-
+}  
 // Function to login
 function login() {
     const spireId = document.getElementById('spireId').value;
@@ -61,6 +79,8 @@ function login() {
             if (user.password === password) {
                 alert('Login successful');
                 window.location.href = '/home';
+                sessionStorage.setItem('spireId', spireId);
+                sessionStorage.setItem('userName', user.name); // Store the user's name in session storage
             } else {
                 alert('Incorrect password');
             }
@@ -102,3 +122,4 @@ function resetPassword() {
             }
         });
 }
+

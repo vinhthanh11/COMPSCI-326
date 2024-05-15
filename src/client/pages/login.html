@@ -22,12 +22,13 @@
             <h4 onclick="showForgotPasswordForm()" style="cursor:pointer;">Forgot your password?</h4>
             <div id="registerForm" style="display: none;">
                 <h3>Register</h3>
-                <input type="text" id="newSpireId" placeholder="SPIRE ID">
+                <input type="text" id="newSpireId" placeholder="SPIRE ID" autocomplete="off">
+                <input type="text" id="newName" placeholder="Name" autocomplete="off"> <!-- Input field for name -->
                 <input type="password" id="newPassword" placeholder="Password">
                 <input type="password" id="confirmPassword" placeholder="Confirm Password">
                 <button type="button" onclick="register()">Register</button>
                 <button type="button" onclick="hideRegisterForm()">Cancel</button>
-            </div>
+            </div>              
             <div id="forgotPasswordForm" style="display: none;">
                 <h3>Reset Password</h3>
                 <input type="text" id="resetSpireId" placeholder="SPIRE ID" autocomplete="off">
