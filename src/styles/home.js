@@ -28,17 +28,26 @@ async function displayAccountBalances() {
         window.location.href = '/';
     }
 }
+function getFormattedDate(daysBack) {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - daysBack);
 
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Add 1 since months are zero-indexed
+    const day = String(currentDate.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
 // Load chart into DOM
 console.log("ok");
 let chart;
 const chartValues = [
-{date: '2024-01-01', amount: 10.34},
-{date: '2024-02-01', amount: 8.57},
-{date: '2024-03-01', amount: 6.87},
-{date: '2024-04-01', amount: 23.54},
-{date: '2024-05-01', amount: 5.77},
-{date: '2024-06-01', amount: 9.04}];
+{date: getFormattedDate(5), amount: 10.34},
+{date: getFormattedDate(4), amount: 8.57},
+{date: getFormattedDate(3), amount: 6.87},
+{date: getFormattedDate(2), amount: 23.54},
+{date: getFormattedDate(1), amount: 5.77},
+{date: getFormattedDate(0), amount: 9.04}];
 
 const news = [
 {title: "An exploration of UMass' kosher dining options", url:"https://dailycollegian.com/2024/04/an-exploration-of-umass-kosher-dining-options/"},
@@ -49,13 +58,17 @@ const news = [
 
 document.addEventListener('DOMContentLoaded', function () {
     renderChart();
-
-    addChartValue({date: '2024-07-01', amount: 11.43});
-
-    addAccountStudentDebitPlan(11.20);
-    addAccountDiningDollars(21.45);
-    addAccountInvesting(132.87);
-    addAccountDCMeals(62);
+    try {
+        addChartValue({date: getFormattedDate(0), amount: 0});
+        displayAccountBalances()
+    } catch (e){
+        addChartValue({date: getFormattedDate(0), amount: 0});
+        addAccountStudentDebitPlan(9999);
+        addAccountDiningDollars(9999);
+        addAccountInvesting(9999);
+        addAccountDCMeals(9999);
+    }
+    
 
     loadNewsHeadlines();
 
