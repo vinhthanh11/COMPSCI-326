@@ -64,6 +64,62 @@ depositButton.addEventListener('click', function() {
     closeModal();
 });
 
+// Function to open the withdrawal modal
+function openWithdrawModal() {
+    // Set the content of the From Account selection
+    document.getElementById('from-account').innerHTML = `
+      <option value="choose">Please Choose</option>
+      <option value="student-debt-plan">Student Debt Plan</option>
+      <option value="dining-dollars">Dining Dollars</option>
+      <option value="investing">Investing</option>
+    `;
+  
+    // Display the withdrawal modal
+    document.getElementById('withdraw-modal').style.display = 'block';
+  }
+  
+  // Function to close the withdrawal modal
+  function closeWithdrawModal() {
+    document.getElementById('withdraw-modal').style.display = 'none';
+  }
+  
+  // Event listener for the withdraw button
+  document.querySelector('.withdraw-btn').addEventListener('click', openWithdrawModal);
+  
+  // Event listener for the close button (if you have one in your modal)
+  document.querySelector('.close-modal').addEventListener('click', closeWithdrawModal);
+  
+  var withdrawButton = document.getElementById('withdraw-button');
+  
+  // Add click event listener to the withdraw button
+  withdrawButton.addEventListener('click', function() {
+    // Get the value from the withdrawal amount input field
+    var withdrawalAmount = parseFloat(document.getElementById('withdraw-amount').value);
+  
+    // Get the selected option from the "From Account" select field
+    var fromAccountSelect = document.getElementById('from-account');
+    var selectedOption = fromAccountSelect.options[fromAccountSelect.selectedIndex].value;
+  
+    // Update the balance based on the selected account
+    switch(selectedOption) {
+      case 'student-debt-plan':
+        updateBalance('student-debt', -withdrawalAmount);
+        break;
+      case 'dining-dollars':
+        updateBalance('dining-dollars', -withdrawalAmount);
+        break;
+      case 'investing':
+        updateBalance('investing', -withdrawalAmount);
+        break;
+      default:
+        // Handle default case or error if needed
+        break;
+    }
+  
+    // Close the withdrawal modal
+    closeWithdrawModal();
+  });
+
 // Function to update the balance
 function updateBalance(accountId, depositAmount) {
     var accountElement = document.getElementById(accountId);
