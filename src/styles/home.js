@@ -1,4 +1,5 @@
 // Load chart into DOM
+console.log("ok");
 let chart;
 const chartValues = [
 {date: '2024-01-01', amount: 10.34},

@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/pages/login.css">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/login.css">
     <title>Login</title>
 </head>
 <body>
     <div class="container">
-        <div class="box left-box">
-
-        </div>
+        <div class="box left-box"></div>
         <div class="box right-box">
             <h1>UniCash</h1>
             <h2>Investing in Your Future,<br>One Swipe at a Time</h2>
-            <input type="text" placeholder="SPIRE ID">
-            <input type="password" placeholder="Password">
+            <input type="text" id="spireId" placeholder="SPIRE ID">
+            <input type="password" id="password" placeholder="Password">
             <div class="login-buttons">
-                <button type="button">Login</button>
-                <button type="button">Register</button>
+                <button type="button" onclick="login()">Login</button>
+                <button type="button" onclick="showRegisterForm()">Register</button>
             </div>
             <h4>Forgot your password?</h4>
+            <div id="registerForm" style="display: none;">
+                <h3>Register</h3>
+                <input type="text" id="newSpireId" placeholder="SPIRE ID">
+                <input type="password" id="newPassword" placeholder="Password">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                <button type="button" onclick="register()">Register</button>
+                <button type="button" onclick="hideRegisterForm()">Cancel</button>
+            </div>
+            <div id="updatePasswordForm" style="display: none;">
+                <h3>Update Password</h3>
+                <input type="password" id="currentPassword" placeholder="Current Password">
+                <input type="password" id="newPasswordUpdate" placeholder="New Password">
+                <input type="password" id="confirmNewPassword" placeholder="Confirm New Password">
+                <button type="button" onclick="updatePassword()">Update Password</button>
+                <button type="button" onclick="hideUpdatePasswordForm()">Cancel</button>
+            </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
+    <script src="../../server/db.js"></script>
 </body>
 </html>
