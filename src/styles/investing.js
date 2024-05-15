@@ -6,7 +6,14 @@ const chartValues = [
 {date: '2024-03-01', amount: 6.87},
 {date: '2024-04-01', amount: 23.54},
 {date: '2024-05-01', amount: 5.77},
-{date: '2024-06-01', amount: 9.04}];
+{date: '2024-06-01', amount: 9.04},
+{date: '2024-07-01', amount: 10.34},
+{date: '2024-08-01', amount: 8.57},
+{date: '2024-09-01', amount: 6.87},
+{date: '2024-10-01', amount: 23.54},
+{date: '2024-11-01', amount: 5.77},
+{date: '2024-12-01', amount: 9.04},
+];
 
 const recentDividends = [2.34, 5.23, 1.44];
 

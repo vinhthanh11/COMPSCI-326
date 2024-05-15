@@ -13,9 +13,9 @@
 <body>
     <!-- NAVBAR HERE  -->
     <div class="navbar">
-        <a class="first" href="/">U-Invest</a>
+        <a class="first" href="/home">U-Invest</a>
         <nav>
-          <a  href="/">Home</a>
+          <a  href="/home">Home</a>
           <a href="./investing">Investing</a>
           <a href="./history">History</a>
           <a href="./profile">Explore</a>
@@ -32,11 +32,38 @@
 
     <div>
         <h1>Investing</h1>
-        <h1>Total amount here</h1>
-        <div class="chart-container" id="main-chart">
+        <h1>Apple</h1>
+        <!-- <div class="chart-container" id="main-chart">
             <canvas id="myChart"></canvas>
             <script src="../../styles/investing.js"></script>
+        </div> -->
+
+
+        <!-- TradingView Widget BEGIN -->
+    <div class="center-container">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+            {
+            "width"= "980",
+            "height"= "300",
+            "symbol"= "BITSTAMP:BTCUSD",
+            "interval"= "D",
+            "timezone"= "Etc/UTC",
+            "theme"= "light",
+            "style"= "1",
+            "locale"= "en",
+            "allow_symbol_change"= true,
+            "calendar"= false,
+            "support_host"= "https://www.tradingview.com"
+        }
+            </script>
         </div>
+        <!-- TradingView Widget END -->
+    </div>
+    
+
         <div class="container">
             <div class="box">
                 <div class="header">
