@@ -44,3 +44,8 @@ button {
     width: 40%;
     justify-content: space-between;
 }
+
+/* Existing styles */
+#registerForm, #updatePasswordForm {
+    margin-top: 20px;
+}
