@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'src')));
 
 // Fallback to 'index.html' for any other request
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'client/pages/home.html'));
 });
 

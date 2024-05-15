@@ -1,0 +1,49 @@
+/* history.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+#navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px;
+    color: #444;
+}
+
+#history-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+#history-table th, #history-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#history-table th {
+    background-color: #e0e0e0;
+    font-size: 18px;
+}
+
+#history-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#history-table tr:hover {
+    background-color: #d1e7dd;
+}
