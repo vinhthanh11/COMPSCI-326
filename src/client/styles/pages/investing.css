@@ -1,0 +1,115 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #800000; /* UMass Maroon */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Providing spacing around the chart */
+    box-sizing: border-box; /* Including padding and border in the width */
+    max-width: 800px; /* Sets the maximum width of the chart container */
+    margin: 20px auto; /* Centers the chart container */
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px;
+}
+
+canvas {
+    width: 100%; /* Full width of the container */
+    height: auto; /* To maintain the aspect ratio */
+    max-height: 400px; /* Maximum height */
+    background-color: rgb(222, 222, 222);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+    border-radius: 8px; /* Rounded corners for the canvas */
+}
+
+.container {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allowing boxes to wrap to the next line if space is not enough */
+    gap: 20px; /* Space between boxes */
+}
+
+.box {
+    background-color: whitesmoke;
+    border-radius: 10px; /* Rounded corners for the boxes */
+    overflow: hidden; /* Ensuring the inner content doesn't overflow the border-radius */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow for boxes */
+    flex: 1; /* Allowing boxes to grow */
+    min-width: calc(50% - 20px); /* Minimum width for each box accounting for gap */
+    margin: 10px 0; /* Vertical margin for boxes */
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #800000; /* UMass Maroon */
+    color: #fff;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    border-bottom: 2px solid #000000; /* Border to separate header from content */
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligning content to the top */
+    padding: 10px; /* Padding within the content area */
+    height: 100%; /* Taking full height of the parent */
+}
+
+.inner-content {
+    width: 95%; /* Full width of the parent */
+    background-color: #f5f5f5;
+    margin: 10px 0; /* Spacing between each inner content */
+    display: flex;
+    align-items: center; /* Centering items vertically */
+    justify-content: space-between; /* Spacing between title and amount */
+    padding: 15px; /* Padding within the inner content */
+    border-radius: 8px; /* Rounded corners within each inner content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Added subtle shadow for depth */
+}
+
+.title {
+    font-weight: bold; 
+    color: #333; 
+    flex: 1; 
+    text-align: left; 
+}
+
+.amount {
+    text-align: right;
+    color: #333; 
+    flex: 1;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        display: block; /* Stacking boxes vertically on smaller screens */
+    }
+
+    .box {
+        margin-bottom: 20px; /* Adding space between stacked boxes */
+    }
+}
