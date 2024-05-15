@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 
 // Serve static files from the 'client' directory
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'src')));
 
 // Fallback to 'index.html' for any other request
@@ -24,6 +25,13 @@ app.get('/profile', (req, res) => {
 
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'client/pages/login.html'));
+=======
+app.use(express.static(path.join(__dirname, 'src', 'client')));
+
+// Fallback to 'index.html' for any other request
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'client', 'index.html'));
+>>>>>>> 909dd2238e6ae737aa97ce3ef4a1ee24b07036e4
 });
 
 const PORT = process.env.PORT || 3000;
