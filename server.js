@@ -1,11 +1,18 @@
+import express, { response } from "express";
 import PouchDB from "pouchdb";
-
-const express = require('express');
-const path = require('path');
+// import cors from "cors";
+// import Database from "./database.js";
+import path from "path";
+import { fileURLToPath } from "url";
+// import * as url from "url";
+import { dirname } from "path";
+// import { promises as fs } from "fs";
 const app = express();
 
 const db = new PouchDB('dmteam');
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 // Serve static files from the 'client' directory
 app.use(express.static(path.join(__dirname, 'src')));
 
@@ -20,8 +27,20 @@ async function addDocument(doc) {
   }
 }
 
+async function getDocument(id) {
+  try {
+    const doc = await db.get(id);
+    console.log(doc);
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
 app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'client/pages/home.html'));
+  addDocument({_id: 'dang', data: {dz: 100}});
+  getDocument('dang');
 });
 
 app.get('/history', (req, res) => {
