@@ -1,3 +1,34 @@
+const db = new PouchDB('login-db');
+
+// Function to fetch user data from PouchDB
+async function fetchUserData(spireId) {
+    try {
+        const user = await db.get(`user:${spireId}`);
+        return user.balances;
+    } catch (err) {
+        console.error('Error fetching user data:', err);
+        return null;
+    }
+}
+
+async function displayAccountBalances() {
+    const spireId = sessionStorage.getItem('spireId');
+
+    if (spireId) {
+        const balances = await fetchUserData(spireId);
+
+        if (balances) {
+            addAccountStudentDebitPlan(balances.studentDebt);
+            addAccountDiningDollars(balances.diningDollars);
+            addAccountInvesting(balances.investing);
+            addAccountDCMeals(balances.unlimitedDC);
+        }
+    } else {
+        console.error('SPIRE ID not found in session storage');
+        window.location.href = '/';
+    }
+}
+
 // Load chart into DOM
 console.log("ok");
 let chart;
@@ -10,7 +41,7 @@ const chartValues = [
 {date: '2024-06-01', amount: 9.04}];
 
 const news = [
-{title: "An exploration of UMass’ kosher dining options", url:"https://dailycollegian.com/2024/04/an-exploration-of-umass-kosher-dining-options/"},
+{title: "An exploration of UMass' kosher dining options", url:"https://dailycollegian.com/2024/04/an-exploration-of-umass-kosher-dining-options/"},
 {title: "Baseball Notebook: UMass suffers sweep at the hands of George Washington", url:"https://dailycollegian.com/2024/05/baseball-notebook-umass-suffers-sweep-at-the-hands-of-george-washington/"},
 {title: "Amherst Burgers bucking the odds", url:"https://dailycollegian.com/2023/10/amherst-burgers-bucking-the-odds/"},
 {title: "SGA discusses options for reform of the Student Activities Fee increase", url:"https://dailycollegian.com/2024/03/sga-discusses-options-for-reform-of-the-student-activities-fee-increase/"},

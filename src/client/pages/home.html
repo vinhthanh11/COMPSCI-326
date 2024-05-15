@@ -9,7 +9,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="text/javascript" src="../components/pages/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
     <div class="navbar">
         <a class="first" href="/home">UniCash</a>
         <nav>
-          <a  href="/home">Home</a>
+          <a href="/home">Home</a>
           <a href="./investing">Investing</a>
           <a href="./history">History</a>
           <a href="./profile">Explore</a>
@@ -32,15 +32,12 @@
     </div>
     <!-- END NAVBAR -->
 
-
     <h1>Investing Summary</h1>
     <div id="total-amount-invested">
         <h1>Total amount here</h1>
     </div>
     <div class="chart-container">
         <canvas id="myChart"></canvas>
-        <script src="home.js"></script>
-        <script src="../../styles/home.js"></script>
     </div>
     <div class="container">
         <div class="box">
@@ -53,7 +50,7 @@
                         Student Debit Plan
                     </div>
                     <div class="amount" id="student-debit-plan">
-                        
+                        <!-- Amount will be inserted here -->
                     </div>
                 </div>
                 <div class="inner-content">
@@ -61,15 +58,15 @@
                         Dining Dollars
                     </div>
                     <div class="amount" id="dining-dollars">
-                        
+                        <!-- Amount will be inserted here -->
                     </div>
                 </div>
                 <div class="inner-content">
                     <div class="title">
                         Investing
                     </div>
-                    <div class="amount"  id="investing">
-                        
+                    <div class="amount" id="investing">
+                        <!-- Amount will be inserted here -->
                     </div>
                 </div>
                 <div class="inner-content">
@@ -77,7 +74,7 @@
                         M Unlimited DC
                     </div>
                     <div class="amount" id="dc-meals">
-                        
+                        <!-- Amount will be inserted here -->
                     </div>
                 </div>
             </div>
@@ -87,10 +84,11 @@
                 <h2>UMass News</h2>
             </div>
             <div class="content" id="news-container">
-
+                <!-- News will be inserted here -->
             </div>
         </div>
     </div>
-</body>
     <script src="../../styles/navbar.js"></script>
+    <script type="text/javascript" src="../../styles/home.js"></script>
+</body>
 </html>
