@@ -1,3 +1,5 @@
+const db = new PouchDB('login-db');
+
 // Function to open the deposit modal
 function openDepositModal() {
     // Set the content of the modal
