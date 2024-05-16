@@ -62,7 +62,6 @@ function register() {
         positions: [test] // array of assets
     };
 
-
     const user = {
         _id: userId,
         spireId,
