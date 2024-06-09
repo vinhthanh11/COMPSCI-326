@@ -1,6 +1,6 @@
 # COMPSCI-326
-### U-invest
-U-invest is an innovative mobile app designed specifically for UMass students, inspired by the popular Acorns app. The app aims to promote financial literacy and long-term wealth-building habits among the student body by enabling effortless investment opportunities.
+### UniCash
+UniCash is an innovative mobile app designed specifically for UMass students, inspired by the popular Acorns app. The app aims to promote financial literacy and long-term wealth-building habits among the student body by enabling effortless investment opportunities.
 
 ### Project Vision
 Whenever students use their UCards to make purchases at places like Harvest Markets, UPubs, or vending machines, the U-invest app will automatically round up the transaction amount to the nearest dollar (or other desired increment). These round-up amounts will then be pooled and invested into various investment vehicles such as Bitcoin ETFs, ETFs, or other suitable options.
